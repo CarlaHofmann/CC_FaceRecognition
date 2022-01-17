@@ -3,10 +3,13 @@
 import sys
 import cv2
 
-def face_detect(imgpath, nogui = False, cascasdepath = "haarcascade_frontalface_default.xml"):
+
+def face_detect(imgpath, imgname, cascasdepath = "haarcascade_frontalface_default.xml"):
 
     image = cv2.imread(imgpath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    new_imgpath = f"images/FR_{imgname}"
 
     face_cascade = cv2.CascadeClassifier(cascasdepath)
 
@@ -23,12 +26,7 @@ def face_detect(imgpath, nogui = False, cascasdepath = "haarcascade_frontalface_
     for (x,y,w,h) in faces:
         cv2.rectangle(image, (x,y), (x+h, y+h), (0, 255, 0), 2)
 
-    if nogui:
-        cv2.imwrite('Spice-Girls.jpg', image)
-        return len(faces)
-    else:
-        cv2.imshow("Faces found", image)
-        cv2.waitKey(0)
+    with open(new_imgpath, "wb+") as file_object:
+        file_object.write(image)
 
-if __name__ == "__main__":
-    face_detect('Spice-Girls.jpg')
+    return new_imgpath
