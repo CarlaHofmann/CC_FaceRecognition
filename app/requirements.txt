@@ -1,0 +1,7 @@
+Flask>=2.0.0
+Flask-Cors
+Flask-RESTful
+flask-restplus
+flask[async]
+numpy
+python-multipart
