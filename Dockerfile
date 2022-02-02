@@ -7,7 +7,10 @@ WORKDIR . /app
 
 COPY requirements.txt requirements.txt
 
-
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pipenv
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libopencv-dev \
         build-essential \
@@ -23,10 +26,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
 RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . .
