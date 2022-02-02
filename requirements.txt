@@ -5,7 +5,6 @@ flask-restplus
 numpy
 opencv-contrib-python
 tzdata
-build-essential
 libssl-dev
 libpq-dev
 libcurl4-gnutls-dev
