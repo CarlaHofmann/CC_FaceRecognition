@@ -4,6 +4,7 @@ Flask-RESTful
 flask-restplus
 numpy
 opencv-contrib-python
+python3-opencv
 ffmpeg 
 tzdata
 python-multipart
