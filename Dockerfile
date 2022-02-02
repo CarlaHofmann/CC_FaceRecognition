@@ -40,4 +40,4 @@ RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
 
 #
-CMD ["python", "main.py", "8080"]
+CMD ["python", "app.py", "8080"]
