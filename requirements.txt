@@ -4,6 +4,8 @@ Flask-RESTful
 flask-restplus
 numpy
 opencv-python-headless
-ffmpeg 
+ffmpeg
 tzdata
 python-multipart
+Werkzeug>=2.0.3
+opencv-python>=4.5.5.62
