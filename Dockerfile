@@ -30,6 +30,6 @@ RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . .
 
-USER 1001
+USER root
 
 CMD ["python", "app.py", "8080"]
